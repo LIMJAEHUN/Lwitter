@@ -1,12 +1,13 @@
 import firebase from "firebase/compat/app"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBnupPa3o4DG6ls9op5rOb-riIPpkYKKM4",
-    authDomain: "jwitter2.firebaseapp.com",
-    projectId: "jwitter2",
-    storageBucket: "jwitter2.appspot.com",
-    messagingSenderId: "183781658715",
-    appId: "1:183781658715:web:92a81ece996f1a9100ef7e"
+    apiKey: process.env.React_app_apiKey,
+    authDomain: process.env.React_app_authDomain,
+    projectId: process.env.React_app_projectId,
+    storageBucket: process.env.React_app_storageBucket,
+    messagingSenderId: process.env.React_app_messagingSenderId,
+    appId: process.env.React_app_appId
   };
 
   export default firebase.initializeApp(firebaseConfig);
+
