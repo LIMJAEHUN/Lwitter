@@ -1,5 +1,6 @@
 import firebase from "firebase/compat/app"
 
+
 const firebaseConfig = {
     apiKey: process.env.React_app_apiKey,
     authDomain: process.env.React_app_authDomain,
