@@ -1,6 +1,7 @@
 import React from 'react';
-import { authService } from 'fbase';
+import { authService, firebaseInstance } from 'fbase';
 import { useState } from 'react';
+import {signInWithPopup,GoogleAuthProvider, GithubAuthProvider,} from "firebase/auth"; //v9버전에서는 사용이 변경됨
 
 const Auth = () => {
     const [ email, setEmail ] = useState("");
@@ -38,6 +39,23 @@ const Auth = () => {
         }
     };
     const toggleAccount = () => setNewAccount((prev) => !prev);
+
+    const onSocialClick = async(event) => {
+        const{
+            target: { name },
+        } = event;
+        let provider;
+        if (name == "google"){
+            provider = new GoogleAuthProvider();
+            //provider = new firebaseInstance.auth.GoogleAuthProvider();
+        } else if (name == "github"){
+            //provider = new firebaseInstance.auth.GithubAuthProvider();
+            provider = new GithubAuthProvider();
+        }
+        //const data = await authService.signInWithPopup(provider); v8버전
+        const data = await signInWithPopup(authService, provider);
+        console.log(data);
+    }
     return (
         <div>
             <form onSubmit = {onSubmit}>
@@ -50,8 +68,8 @@ const Auth = () => {
                 {newAccount ? "Sign in" : "Create Account"}
             </span>
             <div>
-                <button Continue> with Google</button>
-                <button Continue> with Github</button>
+                <button onClick = {onSocialClick} name = "google"> with Google</button>
+                <button onClick = {onSocialClick} name = "github"> with Github</button>
             </div>
         </div>
     );
