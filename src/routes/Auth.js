@@ -1,7 +1,10 @@
 import React from 'react';
-import { authService, firebaseInstance } from 'fbase';
+import { authService } from 'fbase'; //firebaseInstance
 import { useState } from 'react';
 import {signInWithPopup,GoogleAuthProvider, GithubAuthProvider,} from "firebase/auth"; //v9버전에서는 사용이 변경됨
+//import { createUserWithEmailAndPassword,signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+
 
 const Auth = () => {
     const [ email, setEmail ] = useState("");
@@ -27,10 +30,10 @@ const Auth = () => {
             let data;
             if (newAccount){
                 //create newAccount
-            data = await authService.createUserWithEmailAndPassword(email, password);
+            data = await createUserWithEmailAndPassword(authService, email, password);
             } else {
                 //log in
-                data = await authService.signInWithEmailAndPassword(email, password);
+                data = await signInWithEmailAndPassword(authService, email, password);
             }
             console.log(data);
 
