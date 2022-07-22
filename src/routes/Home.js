@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { dbService } from "fbase";
+import { db } from "fbase";
 import { collection, addDoc } from "firebase/firestore/lite";
 //import { collection } from "firebase/firestore";
 
@@ -14,15 +14,18 @@ const Home = () => {
     const onSubmit = async (event) => {
         
         event.preventDefault();
-        await addDoc(collection(dbService, "lweets"), {
-            text: lweet,
+        await addDoc(collection(db, "lweets"), {
+            name: lweet,
             //createdAt: Date.now(), 
         });
         setLweet("");
         
     };
     
- 
+    
+   
+
+
     // await addDoc(collection(dbService, "nweets"), {
     //     text: nweet,
     //     createdAt: Date.now(),

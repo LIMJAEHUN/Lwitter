@@ -31,11 +31,11 @@ const firebaseConfig = {
   //export const authService = getAuth();
   
 
-  const app = initializeApp(firebaseConfig);
+  const app = initializeApp(firebaseConfig); //eslint-disable-line no-unused-vars
   export const authService = getAuth();
   //export const firebaseInstance = getAuth();
   //export const dbService = getFirestore();
-  export const dbService = getFirestore();
+  export const db = getFirestore();
   
   // export default firebase.initializeApp(firebaseConfig);
   

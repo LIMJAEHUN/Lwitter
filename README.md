@@ -35,3 +35,7 @@
 - 파이어베이스 DB설정
 - 데이터 추가 중 오류 발생 Uncaught (in promise) FirebaseError: Request failed with error: 정확한 원인 파악중
 - 회원 가입 , 이메일 비밀번호 로그인 오류 뒤늦게 발견 후 수정(단순 버전 문제)
+# 9일차
+- 파이어베이스 오류 수정 진행중
+- 코드 자체 문제보다 환결설정 혹은 파이어베이스 설정문제라고 추측중
+- 파이어베이스 환경설정에서 app 변서 선언 했으나 인식 문제로 에러 수정을 위한 소스 추가eslint-disable-line no-unused-vars
