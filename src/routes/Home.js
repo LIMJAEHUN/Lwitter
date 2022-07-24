@@ -5,22 +5,23 @@ import { collection, addDoc } from "firebase/firestore/lite";
 //import { collection } from "firebase/firestore";
 
 
-   
-
-
 const Home = () => {
     const [ lweet, setLweet ] = useState("");
+   
 
     const onSubmit = async (event) => {
         
         event.preventDefault();
-        await addDoc(collection(db, "lweets"), {
+        await addDoc(collection(db, "lweet"), {
             name: lweet,
-            //createdAt: Date.now(), 
+            createdAt: Date.now(), 
         });
-        setLweet("");
+      
+        setLweet();
         
     };
+   
+  
     
     
    

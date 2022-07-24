@@ -12,6 +12,8 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore/lite";
 
 
+//export const dbService = firebase.firestore(); 대신
+
 
 
 const firebaseConfig = {
@@ -32,11 +34,11 @@ const firebaseConfig = {
   
 
   const app = initializeApp(firebaseConfig); //eslint-disable-line no-unused-vars
-  export const authService = getAuth();
+  export const authService = getAuth(app);
   //export const firebaseInstance = getAuth();
   //export const dbService = getFirestore();
-  export const db = getFirestore();
-  
+  export const db = getFirestore(app);
+  //export const firebaseInstance = getAuth();
   // export default firebase.initializeApp(firebaseConfig);
   
  //export const authService = firebase.auth();
