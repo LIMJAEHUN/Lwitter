@@ -17,9 +17,9 @@ const Auth = () => {
         const{
             target: { name, value },
         } = event;
-        if(name == "email"){
+        if(name === "email" ){
             setEmail(value);
-        }else if (name == "password"){
+        }else if (name === "password"){
             setPassword(value);
         }
     };
@@ -48,10 +48,10 @@ const Auth = () => {
             target: { name },
         } = event;
         let provider;
-        if (name == "google"){
+        if (name === "google"){
             provider = new GoogleAuthProvider();
             //provider = new firebaseInstance.auth.GoogleAuthProvider();
-        } else if (name == "github"){
+        } else if (name === "github"){
             //provider = new firebaseInstance.auth.GithubAuthProvider();
             provider = new GithubAuthProvider();
         }
