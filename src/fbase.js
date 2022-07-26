@@ -9,7 +9,7 @@
 //import 'firebase/compat/firestore';
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore/lite";
+import { getFirestore } from "firebase/firestore";
 
 
 //export const dbService = firebase.firestore(); 대신
@@ -35,8 +35,7 @@ const firebaseConfig = {
 
   const app = initializeApp(firebaseConfig); //eslint-disable-line no-unused-vars
   export const authService = getAuth(app);
-  //export const firebaseInstance = getAuth();
-  //export const dbService = getFirestore();
+
   export const db = getFirestore(app);
   //export const firebaseInstance = getAuth();
   // export default firebase.initializeApp(firebaseConfig);

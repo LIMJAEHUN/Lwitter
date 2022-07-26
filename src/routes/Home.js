@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { db } from "fbase";
-import { collection, addDoc, getDocs } from "firebase/firestore/lite";
-//import { collection } from "firebase/firestore";
+import { collection, addDoc, onSnapshot } from "firebase/firestore";
+import Lweet from "components/Lweet";
 
 
 const Home = ({userObj}) => {
@@ -10,16 +10,28 @@ const Home = ({userObj}) => {
     const [ lweet, setLweet ] = useState("");
     const [ lweets, setLweets ] = useState([]);
 
-    const getLweets = async() => {
-        const dbLweets = await getDocs(collection(db, "lweets"));
-        dbLweets.forEach((document) => {
-            const lweetObject = { ...document.data(), id: document.id };
-        setLweets((prev) => [lweetObject, ...prev])
-    });
-    }
+    // const getLweets = async() => {
+    //     const dbLweets = await getDocs(collection(db, "lweets"));
+    //     dbLweets.forEach((document) => {
+    //         const lweetObject = { ...document.data(), id: document.id };
+    //     setLweets((prev) => [lweetObject, ...prev])
+    // });
+    // }
+ 
+
 
     useEffect(() => {
-        getLweets();
+       // getLweets();
+       //db.collection("lweet").onSnapshot((snapshot) =>
+        onSnapshot(collection(db,"lweets"), (snapshot) =>
+        {
+            const newArray = snapshot.docs.map((document) => ({
+                id: document.id,
+                ...document.data(),
+            }));
+            setLweets(newArray);
+        });
+     
     }, []);
 
     console.log(lweets);
@@ -75,9 +87,10 @@ const Home = ({userObj}) => {
              </form>
              <div>
                 {lweets.map((lweet) => (
-                    <div key={lweet.id}>
-                        <h4>{lweet.text}</h4>
-                    </div>
+                    // <div key={lweet.id}>
+                    //     <h4>{lweet.text}</h4>
+                    // </div>
+                    <Lweet key = { lweet.id} lweetObj={lweet} isOwner={lweet.creatorId === userObj.uid} />
                 ))}
              </div>
              </>
