@@ -1,8 +1,12 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { db } from "fbase";
+import { db, storage } from "fbase";
 import { collection, addDoc, onSnapshot } from "firebase/firestore";
 import Lweet from "components/Lweet";
+import { v4 as uuidv4 } from "uuid";
+import { ref, uploadString, getDownloadURL } from "@firebase/storage";
+
+
 
 
 const Home = ({userObj}) => {
@@ -41,11 +45,18 @@ const Home = ({userObj}) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+        const fileRef = ref(storage, `${userObj.uid}/${uuidv4()}`);
+        const response = await uploadString(fileRef, attachment, "data_url");
+        console.log(response);
+        const attachmentUrl = getDownloadURL(ref(storage, `${userObj.uid}/${uuidv4()}`))
+
+
         try {
         const docRef = await addDoc(collection(db, "lweets"), {
         text: lweet,
         createdAt: Date.now(),
         creatorID: userObj.uid,
+        attachmentUrl,
         });
         console.log("Document written with ID: ", docRef.id);
         } catch (error) {
@@ -53,6 +64,13 @@ const Home = ({userObj}) => {
         }
         
         setLweet("");
+        setAttachment("");
+        // const fileRef = ref(storage, `${userObj.uid}/${uuidv4()}`);
+        // const response = await uploadString(fileRef, attachment, "data_url");
+        // console.log(response);
+        // const attachmentUrl = getDownloadURL(ref(storage, `${userObj.uid}/${uuidv4()}`))
+       // const attachmentUrl = await response.ref.getDownloadURL();
+
         };
    
   

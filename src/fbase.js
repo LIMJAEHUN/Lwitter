@@ -8,7 +8,7 @@
 //import 'firebase/compat/auth';
 //import 'firebase/compat/firestore';
 import { initializeApp } from "firebase/app";
-import { getStorage } from "firebase/storage";
+import { getStorage, ref } from "firebase/storage";
 
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -38,8 +38,10 @@ const firebaseConfig = {
 
   const app = initializeApp(firebaseConfig); //eslint-disable-line no-unused-vars
   export const authService = getAuth(app);
-  export const storage = getStorage(app);
+  export const storage = getStorage(app)
   export const db = getFirestore(app);
+  export const storageRef = ref(storage);
+ 
   //export const firebaseInstance = getAuth();
   // export default firebase.initializeApp(firebaseConfig);
   
