@@ -1,20 +1,26 @@
 import React from 'react';
-import { db } from "fbase";
+import { db,storage } from "fbase";
 import { doc, deleteDoc,  updateDoc } from "firebase/firestore";
+import { deleteObject, ref } from "firebase/storage"
 import { useState } from "react";
 
 const Lweet = ({ lweetObj, isOwner }) => {
     const [editing, setEditing] = useState(false);
     const [newLweet, setNewLweet] = useState(lweetObj.text);
 
+    const desertRef = ref(storage, lweetObj.attachmentUrl);
+
     const onDeleteClick = async () => {
         const ok = window.confirm("삭제하시겠습니까?");
-        console.log(ok);
+        
         if (ok) {
-            console.log(lweetObj.id);
-            const data = await deleteDoc(doc(db , `lweets/${lweetObj.id}`));
             
-            console.log(data);
+            await deleteDoc(doc(db , `lweets/${lweetObj.id}`));
+            if (lweetObj.attachmentUrl !=="")
+            //await storage.refFromUrl(lweetObj.attachmentUrl).delete();
+            await deleteObject(desertRef);
+            
+            
         }
     };
 
@@ -49,7 +55,7 @@ const Lweet = ({ lweetObj, isOwner }) => {
                 <>
             <h4>{lweetObj.text}</h4>
             {lweetObj.attachmentUrl && (
-                <img src = {lweetObj.attachmentUrl} width = "50px" height="50px" />
+                <img src = {lweetObj.attachmentUrl} width = "50px" height="50px" alt="profile"/>
             )}
             {isOwner && (
                 <>

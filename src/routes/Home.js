@@ -4,7 +4,7 @@ import { db, storage } from "fbase";
 import { collection, addDoc, onSnapshot } from "firebase/firestore";
 import Lweet from "components/Lweet";
 import { v4 as uuidv4 } from "uuid";
-import { ref, uploadString, getDownloadURL } from "@firebase/storage";
+import { uploadString, ref, getDownloadURL } from "@firebase/storage";
 
 
 
@@ -45,23 +45,23 @@ const Home = ({userObj}) => {
 
     const onSubmit = async (e) => {
         e.preventDefault();
+        let attachmentUrl = "";
+        if (attachment !== ""){
         const fileRef = ref(storage, `${userObj.uid}/${uuidv4()}`);
-        const response = await uploadString(fileRef, attachment, "data_url");
+        const response = await uploadString(fileRef, attachment, 'data_url');
         console.log(response);
-        const attachmentUrl = getDownloadURL(ref(storage, `${userObj.uid}/${uuidv4()}`))
+        attachmentUrl = await getDownloadURL(response.ref)
+        }
 
-
-        try {
-        const docRef = await addDoc(collection(db, "lweets"), {
+        
+        await addDoc(collection(db, "lweets"), {
         text: lweet,
         createdAt: Date.now(),
         creatorID: userObj.uid,
         attachmentUrl,
         });
-        console.log("Document written with ID: ", docRef.id);
-        } catch (error) {
-        console.error("Error adding document: ", error);
-        }
+       // console.log("Document written with ID: ", docRef.id);
+        
         
         setLweet("");
         setAttachment("");
@@ -122,7 +122,7 @@ const Home = ({userObj}) => {
              <input type ="submit" value = "Lweet" />
              {attachment && (
              <div>
-             <img src={attachment} width="50px" height={"50px"} />
+             <img src={attachment} width="50px" height={"50px"} alt="profile"/>
              <button onClick={onClearAttachment}>Clear</button>
              </div>
              )}
