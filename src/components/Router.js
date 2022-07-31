@@ -12,7 +12,7 @@ const AppRouter = ({isLoggedIn, userObj }) => {
     // const [isLoggedIn, setIsLoggedIn] = useState(true);
     return (
         <Router>
-            {isLoggedIn && <Navigation />}
+            {isLoggedIn && <Navigation userObj ={userObj} />}
             <Switch>
                 {isLoggedIn ? ( 
                     <> 
