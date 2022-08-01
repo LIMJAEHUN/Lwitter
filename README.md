@@ -77,3 +77,12 @@ false이 넘어옴
 - 프로필 페이지에 내가 작성한 트윗 값 전달 확인
 - 색인 공부
 - 프로필 출력 진행, 로그 값이 출력은 되지만 사진이 안나옴
+# 18일차
+- 프로필 업데이트 진행
+- updateProfile 함수 오류
+- 최신 버전에 맞는 소스코드로 교체 
+# 19일차
+- 프로필 실시간 업데이트 진행
+- 프로필 업데이트 두번 누르면  getIdToken  함수 에러 발생
+- 유저 정보 호출하는 과정에서 getidtoken을 찾지 못하는 것으로 예상
+- Auth 패키지의 updateCurrentUser 함수 사용하여 호출 문제 해결(참조 https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth#updatecurrentuser)

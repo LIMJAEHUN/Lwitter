@@ -2,6 +2,11 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import AppRouter from "components/Router";
 import { authService } from "fbase";
+import {
+
+  updateCurrentUser,
+
+} from "firebase/auth";
 
 function App() {
   const [ init, setInit] = useState(false);
@@ -20,9 +25,16 @@ function App() {
   } ,[]);
   //setInterval(() => console.log(authService.currentUser), 2000);
   //console.log(authService.currentUser);
+
+  const refreshUser = async() =>{
+    await updateCurrentUser(authService, authService.currentUser);
+    setUserObj(authService.currentUser);
+
+  };
+
   return (
     <>
-      { init ? <AppRouter isLoggedIn = {isLoggedIn } userObj={userObj}/> : "initializing..."}
+      { init ? <AppRouter refreshUser={refreshUser} isLoggedIn = {isLoggedIn } userObj={userObj}/> : "initializing..."}
       {/* //<footer>&copy; {new Date().getFullYear()} Lwitter </footer> */}
     </>
   );

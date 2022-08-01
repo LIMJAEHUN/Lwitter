@@ -1,13 +1,14 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { authService, db } from 'fbase';
+import { authService } from 'fbase';
 import { useHistory } from "react-router-dom"; //useHistory를 이용한 로그아웃
-import { orderBy, query, where, collection ,doc, getDocs}from "firebase/firestore";
+//import { orderBy, query, where, collection ,doc, getDocs}from "firebase/firestore";
 import { updateProfile } from "@firebase/auth"
+
 //import { async } from '@firebase/util';
 //import { collection } from '@firebase/firestore';
 
-const Profile = ({userObj}) => {
+const Profile = ({refreshUser , userObj }) => {
 
     const history = useHistory();
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
@@ -45,12 +46,12 @@ const Profile = ({userObj}) => {
 
 
 
-    const onSubmit = async (event) => {
+    const onSubmit = async(event) => {
         event.preventDefault();
         if (userObj.displayName !== newDisplayName)
         {
             await updateProfile(userObj,{ displayName: newDisplayName });
-          
+            refreshUser();
         }
         
     };
