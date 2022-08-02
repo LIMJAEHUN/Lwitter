@@ -1,11 +1,11 @@
 {
-  "main.js": "origin%20%20https://LIMJAEHUN.github.io/lwitter/static/js/main.50e7d79a.chunk.js",
-  "main.js.map": "origin%20%20https://LIMJAEHUN.github.io/lwitter/static/js/main.50e7d79a.chunk.js.map",
-  "runtime~main.js": "origin%20%20https://LIMJAEHUN.github.io/lwitter/static/js/runtime~main.07b2bdb7.js",
-  "runtime~main.js.map": "origin%20%20https://LIMJAEHUN.github.io/lwitter/static/js/runtime~main.07b2bdb7.js.map",
-  "static/js/2.f6b8a17e.chunk.js": "origin%20%20https://LIMJAEHUN.github.io/lwitter/static/js/2.f6b8a17e.chunk.js",
-  "static/js/2.f6b8a17e.chunk.js.map": "origin%20%20https://LIMJAEHUN.github.io/lwitter/static/js/2.f6b8a17e.chunk.js.map",
-  "index.html": "origin%20%20https://LIMJAEHUN.github.io/lwitter/index.html",
-  "precache-manifest.24d4bdba5cf80af566e03b5676e40a27.js": "origin%20%20https://LIMJAEHUN.github.io/lwitter/precache-manifest.24d4bdba5cf80af566e03b5676e40a27.js",
-  "service-worker.js": "origin%20%20https://LIMJAEHUN.github.io/lwitter/service-worker.js"
+  "main.js": "/lwitter/static/js/main.50e7d79a.chunk.js",
+  "main.js.map": "/lwitter/static/js/main.50e7d79a.chunk.js.map",
+  "runtime~main.js": "/lwitter/static/js/runtime~main.c190708b.js",
+  "runtime~main.js.map": "/lwitter/static/js/runtime~main.c190708b.js.map",
+  "static/js/2.d189fe21.chunk.js": "/lwitter/static/js/2.d189fe21.chunk.js",
+  "static/js/2.d189fe21.chunk.js.map": "/lwitter/static/js/2.d189fe21.chunk.js.map",
+  "index.html": "/lwitter/index.html",
+  "precache-manifest.7bb136508b0a42279b80e66ba8a76b4f.js": "/lwitter/precache-manifest.7bb136508b0a42279b80e66ba8a76b4f.js",
+  "service-worker.js": "/lwitter/service-worker.js"
 }

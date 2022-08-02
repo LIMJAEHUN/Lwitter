@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "origin%20%20https://LIMJAEHUN.github.io/lwitter/precache-manifest.24d4bdba5cf80af566e03b5676e40a27.js"
+  "/lwitter/precache-manifest.7bb136508b0a42279b80e66ba8a76b4f.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("origin%20%20https://LIMJAEHUN.github.io/lwitter/index.html", {
+workbox.routing.registerNavigationRoute("/lwitter/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
