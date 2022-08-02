@@ -86,3 +86,8 @@ false이 넘어옴
 - 프로필 업데이트 두번 누르면  getIdToken  함수 에러 발생
 - 유저 정보 호출하는 과정에서 getidtoken을 찾지 못하는 것으로 예상
 - Auth 패키지의 updateCurrentUser 함수 사용하여 호출 문제 해결(참조 https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth#updatecurrentuser)
+
+# 20일차
+- 소스 코드 정리
+- auth, home 컴포넌트 나누기 작업 진행
+- 배포 진행중

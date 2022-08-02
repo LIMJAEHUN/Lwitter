@@ -9,7 +9,7 @@ import Auth from "routes/Auth";
 import Profile from "routes/Profile";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
-    // const [isLoggedIn, setIsLoggedIn] = useState(true);
+   
     return (
         <Router>
             {isLoggedIn && <Navigation userObj ={userObj} />}

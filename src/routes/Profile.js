@@ -1,18 +1,15 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { authService } from 'fbase';
 import { useHistory } from "react-router-dom"; //useHistory를 이용한 로그아웃
-//import { orderBy, query, where, collection ,doc, getDocs}from "firebase/firestore";
 import { updateProfile } from "@firebase/auth"
 
-//import { async } from '@firebase/util';
-//import { collection } from '@firebase/firestore';
 
 const Profile = ({refreshUser , userObj }) => {
 
     const history = useHistory();
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
-   // const [userObj, setUserObj] = useState(null);
+  
 
     
     const onLogOutClick = () =>{ 

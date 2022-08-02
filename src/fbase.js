@@ -1,22 +1,7 @@
-//import firebase from "firebase/compat/app";
-// import "firebase/auth";
-// import firebase from 'firebase/compat/app';
-// import 'firebase/compat/auth';	// 모듈 추가
-// import { initializeApp } from "firebase/app";
-// import { getAuth } from "firebase/auth";
-//import firebase from 'firebase/compat/app';
-//import 'firebase/compat/auth';
-//import 'firebase/compat/firestore';
 import { initializeApp } from "firebase/app";
 import { getStorage, ref } from "firebase/storage";
-
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
-
-
-
-//export const dbService = firebase.firestore(); 대신
-
 
 
 const firebaseConfig = {
@@ -28,12 +13,6 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_APP_ID
   };
 
-
-  //const app = initializeApp(firebaseConfig);
-  // export const authService = firebase.auth();
-
-  //const App = initializeApp(firebaseConfig);
-  //export const authService = getAuth();
   
 
   const app = initializeApp(firebaseConfig); //eslint-disable-line no-unused-vars
@@ -42,7 +21,3 @@ const firebaseConfig = {
   export const db = getFirestore(app);
   export const storageRef = ref(storage);
  
-  //export const firebaseInstance = getAuth();
-  // export default firebase.initializeApp(firebaseConfig);
-  
- //export const authService = firebase.auth();
