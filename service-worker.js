@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "origin%20%20https://github.com/LIMJAEHUN/Lwitter.git/precache-manifest.31bd9b9ad36511d0bcaa722742b33d67.js"
+  "origin%20%20https://LIMJAEHUN.github.io/lwitter/precache-manifest.24d4bdba5cf80af566e03b5676e40a27.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("origin%20%20https://github.com/LIMJAEHUN/Lwitter.git/index.html", {
+workbox.routing.registerNavigationRoute("origin%20%20https://LIMJAEHUN.github.io/lwitter/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
