@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "8ffbe2045fbb3722c390",
-    "url": "/lwitter/static/js/main.50e7d79a.chunk.js"
+    "revision": "4c3bcce10f35c29a0fa5",
+    "url": "/lwitter/static/js/main.7c534044.chunk.js"
   },
   {
     "revision": "4b61c4ec86bd7b27ebd0",
@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/lwitter/static/js/2.d189fe21.chunk.js"
   },
   {
-    "revision": "135aa642724b0620b5afeddfc1888b6d",
+    "revision": "168008a91e2fdaad2dcf8125c748483b",
     "url": "/lwitter/index.html"
   }
 ];
