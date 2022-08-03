@@ -1,5 +1,5 @@
 import React from 'react';
-import { db,storage } from "fbase";
+import { db,storage } from "fbase.js";
 import { doc, deleteDoc,  updateDoc } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage"
 import { useState } from "react";

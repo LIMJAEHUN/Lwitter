@@ -1,5 +1,5 @@
 import React from 'react';
-import { authService } from 'fbase'; //firebaseInstance
+import { authService } from 'fbase.js'; //firebaseInstance
 import AuthForm from "components/AuthForm";
 
 import {signInWithPopup,GoogleAuthProvider, GithubAuthProvider,} from "firebase/auth"; //v9버전에서는 사용이 변경됨

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import { db } from "fbase";
+import { db } from "fbase.js";
 import { collection, onSnapshot } from "firebase/firestore";
-import Lweet from "components/Lweet";
-import LweetFactory from 'components/LweetFactory';
+import Lweet from "components/Lweet.js";
+import LweetFactory from 'components/LweetFactory.js';
 
 
 const Home = ({userObj}) => {

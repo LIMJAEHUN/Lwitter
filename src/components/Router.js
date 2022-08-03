@@ -3,10 +3,10 @@ import React from 'react';
 import { HashRouter as Router,  Route, Switch } from "react-router-dom";
 //import { HashRouter as Router, Redirect, Route, Switch } from "react-router-dom"; 리다이엑트를 이용한 로그아웃
 
-import Navigation from './Navigation';
-import Home from "routes/Home";
-import Auth from "routes/Auth";
-import Profile from "routes/Profile";
+import Navigation from './Navigation.js';
+import Home from "routes/Home.js";
+import Auth from "routes/Auth.js";
+import Profile from "routes/Profile.js";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
    

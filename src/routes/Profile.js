@@ -1,6 +1,6 @@
 import React from 'react';
 import {  useState } from 'react';
-import { authService } from 'fbase';
+import { authService } from 'fbase.js';
 import { useHistory } from "react-router-dom"; //useHistory를 이용한 로그아웃
 import { updateProfile } from "@firebase/auth"
 

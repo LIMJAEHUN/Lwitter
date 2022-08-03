@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import AppRouter from "components/Router";
-import { authService } from "fbase";
+import AppRouter from "components/Router.js";
+import { authService } from "fbase.js";
 import {
 
   updateCurrentUser,

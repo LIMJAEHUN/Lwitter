@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from 'react';
-import { db, storage } from "fbase";
+import { db, storage } from "fbase.js";
 import { collection, addDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import { uploadString, ref, getDownloadURL } from "@firebase/storage";
