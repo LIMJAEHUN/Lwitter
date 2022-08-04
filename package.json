@@ -1,5 +1,6 @@
 {
   "homepage": "https://limjaehun.github.io/Lwitter/",
+  "homepage": ".",
   "name": "lwitter",
   "version": "0.1.0",
   "private": true,
