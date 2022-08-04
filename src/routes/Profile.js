@@ -24,22 +24,7 @@ const Profile = ({refreshUser , userObj }) => {
         setNewDisplayName(value);
     };
 
-    // const getMyLweets = async() => {
-    //    const lweets = query(collection(db,"lweets"),where("creatorID", "==", userObj.uid),orderBy("createdAt", "desc"));
-    //  //  console.log("Document data:", lweets.getDoc.data());
-    //    // console.log(doc.id, " => ", doc.data());
-    //   // console.log(lweets.docs.map((doc) => doc.data()));
-        
-    //   const querySnapshot = await getDocs(lweets);
-    //   querySnapshot.forEach((doc) => {
-    //   console.log(doc.id, "=>", doc.data());
-    //   });
-     
-    // };
-
-    // useEffect(() => {
-    //     getMyLweets();
-    // }, []);
+zz
 
 
 

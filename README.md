@@ -91,3 +91,8 @@ false이 넘어옴
 - 소스 코드 정리
 - auth, home 컴포넌트 나누기 작업 진행
 - 배포 진행중
+- mainfest 오류(주소 오류로 추정)
+
+# 21일차
+- gitio 배포 진행 완료
+- mainfest 오류 해결
