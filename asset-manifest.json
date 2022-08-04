@@ -1,11 +1,11 @@
 {
-  "main.js": "/static/js/main.7c534044.chunk.js",
-  "main.js.map": "/static/js/main.7c534044.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.dd7c148b.chunk.js": "/static/js/2.dd7c148b.chunk.js",
-  "static/js/2.dd7c148b.chunk.js.map": "/static/js/2.dd7c148b.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.a39ef6bd1309c2cfd9f0c7665f8ae81e.js": "/precache-manifest.a39ef6bd1309c2cfd9f0c7665f8ae81e.js",
-  "service-worker.js": "/service-worker.js"
+  "main.js": "/Lwitter/static/js/main.7c534044.chunk.js",
+  "main.js.map": "/Lwitter/static/js/main.7c534044.chunk.js.map",
+  "runtime~main.js": "/Lwitter/static/js/runtime~main.55c4c0ae.js",
+  "runtime~main.js.map": "/Lwitter/static/js/runtime~main.55c4c0ae.js.map",
+  "static/js/2.0b86d2c9.chunk.js": "/Lwitter/static/js/2.0b86d2c9.chunk.js",
+  "static/js/2.0b86d2c9.chunk.js.map": "/Lwitter/static/js/2.0b86d2c9.chunk.js.map",
+  "index.html": "/Lwitter/index.html",
+  "precache-manifest.e3e2ff30e0be09a03c9dcd0f9e13042a.js": "/Lwitter/precache-manifest.e3e2ff30e0be09a03c9dcd0f9e13042a.js",
+  "service-worker.js": "/Lwitter/service-worker.js"
 }
