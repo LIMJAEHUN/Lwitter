@@ -1,14 +1,16 @@
 import React from 'react';
-import {  useState } from 'react';
-import { authService } from 'fbase.js';
+import {  useState, useEffect } from 'react';
+import { authService, db } from 'fbase.js';
 import { useHistory } from "react-router-dom"; //useHistory를 이용한 로그아웃
-import { updateProfile } from "@firebase/auth"
+import { updateProfile } from "@firebase/auth";
+import { collection, query, orderBy,getDocs, where } from "firebase/firestore";
 
 
 const Profile = ({refreshUser , userObj }) => {
 
     const history = useHistory();
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
+    const [ lweets, setLweets ] = useState([]);
   
 
     
@@ -23,9 +25,30 @@ const Profile = ({refreshUser , userObj }) => {
         } = event;
         setNewDisplayName(value);
     };
+      // const getLweets = async() => {
+    //     const dbLweets = await getDocs(collection(db, "lweets"));
+    //     dbLweets.forEach((document) => {
+    //         const lweetObject = { ...document.data(), id: document.id };
+    //     setLweets((prev) => [lweetObject, ...prev])
+    // });
+    // }
+    const getMyLweets = async() => {
+       const lweets = query(collection(db,"lweets"),where("creatorID", "==", userObj.uid),orderBy("createdAt", "desc"));
+        
+      const querySnapshot = await getDocs(lweets);
+      querySnapshot.forEach((doc) => {
+      const lweetObject = { ...doc.data(), id: doc.id };
+      setLweets((prev) => [lweetObject, ...prev])
+    
+        
+    });
+      //console.log(doc.id, "=>", doc.data());
+    };
 
-zz
-
+    useEffect(() => {
+        getMyLweets();
+    }, []);
+    
 
 
     const onSubmit = async(event) => {
@@ -44,6 +67,18 @@ zz
             <input type = "submit" value="update Profile" />
         </form>
         <button onClick={onLogOutClick}>Log Out </button>
+        {lweets.map((lweetObject) => (
+            <div key = { lweetObject.id}>
+    
+            <h4>{lweetObject.text}</h4>
+            {lweetObject.attachmentUrl && (
+                <img src = {lweetObject.attachmentUrl} width = "50px" height="50px" alt="profile"/>
+            )}
+           
+            
+            </div> 
+        ))}
+        
         
         
         </>
