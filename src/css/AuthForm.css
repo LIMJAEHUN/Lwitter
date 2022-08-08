@@ -1,0 +1,129 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #1BBC9B;
+}
+
+.login-form {
+    width: 300px;
+    height: 350px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #EEEFF1;
+    padding: 20px;
+    margin: 15% auto;
+}
+
+.social-form {
+    width: 100px;
+    background-color: #EEEFF1;
+    padding: 0 20px 0 25px;
+    margin: 0;
+}
+
+.text-field {
+    font-size: 14px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.social-button {
+    float: left;
+    padding: 10px 10px 10px 70px;
+    width: 200px;
+    margin-bottom: 15px;
+    display: block;
+    border: 1px solid #C2C7D0;
+    border-radius: 10px;
+    position: relative;
+    color: #FFF;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s
+}
+
+
+#google-connect {
+    background: rgb(255, 255, 255) url('https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus.png') no-repeat scroll 3px 0px / 45px 45px padding-box border-box;
+    border: 1px solid rgb(220, 74, 61);
+}
+
+#google-connect:hover {
+    border-color: rgb(220, 74, 61);
+    background: rgb(220, 74, 61) url('https://raw.githubusercontent.com/eswarasai/social-login/master/img/google-plus-white.png') no-repeat scroll 3px 0px / 50px 50px padding-box border-box;
+    -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+}
+
+#google-connect span {
+    box-sizing: border-box;
+    color: rgb(220, 74, 61);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(220, 74, 61);
+    outline: rgb(255, 255, 255) none 0px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#google-connect:hover span {
+    color: #FFF;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#github-connect {
+    background: rgb(255, 255, 255) url('../image/github-logo.png') no-repeat scroll 5px 5px / 30px 30px padding-box border-box;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+#github-connect:hover {
+    border-color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255) url('../image/github-logo.png') no-repeat scroll 5px 3px / 35px 35px padding-box border-box;
+    -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+}
+
+#github-connect span {
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(255, 255, 255);
+    outline: rgb(0, 0, 0) none 0px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#github-connect:hover span {
+    color: rgb(0, 0, 0);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}

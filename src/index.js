@@ -9,6 +9,8 @@ import App from 'components/App.js';
 //   </React.StrictMode>,
 //   document.getElementById("root"),
 // );
-
+//
+//
+//
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
