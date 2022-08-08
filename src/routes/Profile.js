@@ -4,6 +4,7 @@ import { authService, db } from 'fbase.js';
 import { useHistory } from "react-router-dom"; //useHistory를 이용한 로그아웃
 import { updateProfile } from "@firebase/auth";
 import { collection, query, orderBy,getDocs, where } from "firebase/firestore";
+import Lweet from "components/Lweet.js";
 
 
 const Profile = ({refreshUser , userObj }) => {
@@ -11,9 +12,8 @@ const Profile = ({refreshUser , userObj }) => {
     const history = useHistory();
     const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
     const [ lweets, setLweets ] = useState([]);
-  
-
     
+     
     const onLogOutClick = () =>{ 
         authService.signOut();
         history.push("/");
@@ -67,19 +67,17 @@ const Profile = ({refreshUser , userObj }) => {
             <input type = "submit" value="update Profile" />
         </form>
         <button onClick={onLogOutClick}>Log Out </button>
+       
         {lweets.map((lweetObject) => (
-            <div key = { lweetObject.id}>
-    
-            <h4>{lweetObject.text}</h4>
-            {lweetObject.attachmentUrl && (
-                <img src = {lweetObject.attachmentUrl} width = "50px" height="50px" alt="profile"/>
-            )}
-           
+            <Lweet
+             key = { lweetObject.id}
+            lweetObj={lweetObject}
+            isOwner={lweetObject.creatorID === userObj.uid} 
+            />
             
-            </div> 
         ))}
         
-        
+       
         
         </>
     );
