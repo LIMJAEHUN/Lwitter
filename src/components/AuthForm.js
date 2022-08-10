@@ -31,11 +31,16 @@ const AuthForm = () => {
                 //log in
                 data = await signInWithEmailAndPassword(authService, email, password);
             }
-            console.log(data);
+           
 
         } catch (error) {
-             
-            setError(error.message);
+             if (error.message ==='Firebase: Password should be at least 6 characters (auth/weak-password).'){
+                setError('비밀번호는 6자리 이상 입력해야 합니다');
+             }
+             if (error.message ==='Firebase: Error (auth/user-not-found).'){
+                setError('일치하는 사용자를 찾지 못했습니다');
+             }
+           else {setError(error.message);}
         }
     };
 

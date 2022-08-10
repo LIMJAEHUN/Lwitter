@@ -23,15 +23,15 @@ const Auth = () => {
 
     return (      
         <div>
-            <body>
+            
                 <div className="login-form">
                     <AuthForm/>
                     <div className="social-form">
-                        <a href="#" className="social-button" id="google-connect" onClick = {onSocialClick} name = "google"><span>Google</span></a><p></p>
-                        <a href="#" className="social-button" id="github-connect" onClick = {onSocialClick} name = "github"><span>Github</span></a><p></p>
+                        <button  className="social-button" id="google-connect" onClick = {onSocialClick} name = "google"><span>Google</span></button><p></p>
+                        <button  className="social-button" id="github-connect" onClick = {onSocialClick} name = "github"><span>Github</span></button><p></p>
                     </div>
                 </div>
-            </body>
+            
         </div>
     );
 };
