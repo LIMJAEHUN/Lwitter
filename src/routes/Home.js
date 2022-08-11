@@ -46,8 +46,10 @@ const Home = ({userObj}) => {
                     lweetObj={lweet} 
                     isOwner={lweet.creatorID === userObj.uid} 
                     />
+                   
                     
                 ))}
+                 <reply />
                 
              </div>
              
