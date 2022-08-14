@@ -6,10 +6,12 @@ import Lweet from "components/Lweet.js";
 import LweetFactory from 'components/LweetFactory.js';
 
 
+
 const Home = ({userObj}) => {
     
    
     const [ lweets, setLweets ] = useState([]);
+   
 
 
     // const getLweets = async() => {
@@ -37,6 +39,7 @@ const Home = ({userObj}) => {
  
     return (
         <>
+        <like />
     <LweetFactory userObj={userObj} />
              <div>
                 {lweets.map((lweet) => (
@@ -46,6 +49,7 @@ const Home = ({userObj}) => {
                     lweetObj={lweet} 
                     isOwner={lweet.creatorID === userObj.uid} 
                     />
+                    
                    
                     
                 ))}

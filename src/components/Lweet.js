@@ -5,6 +5,7 @@ import { deleteObject, ref } from "firebase/storage"
 import { useState } from "react";
 
 const Lweet = ({ lweetObj, isOwner }) => {
+   
     const [editing, setEditing] = useState(false);
     const [newLweet, setNewLweet] = useState(lweetObj.text);
 
@@ -57,8 +58,10 @@ const Lweet = ({ lweetObj, isOwner }) => {
             {lweetObj.attachmentUrl && (
                 <img src = {lweetObj.attachmentUrl} width = "50px" height="50px" alt="profile"/>
             )}
+          
            { isOwner && (
                 <>
+            
             <button onClick = {onDeleteClick}>Delete Lweet </button>
             <button onClick = {toggleEditing}>Update Lweet </button>
             </>
