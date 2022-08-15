@@ -53,7 +53,7 @@ const Home = ({userObj}) => {
                    
                     
                 ))}
-                 <reply />
+                
                 
              </div>
              

@@ -8,6 +8,7 @@ const Lweet = ({ lweetObj, isOwner }) => {
    
     const [editing, setEditing] = useState(false);
     const [newLweet, setNewLweet] = useState(lweetObj.text);
+    const [ like, setLike]= useState(0);
 
     const desertRef = ref(storage, lweetObj.attachmentUrl);
 
@@ -59,12 +60,14 @@ const Lweet = ({ lweetObj, isOwner }) => {
                 <img src = {lweetObj.attachmentUrl} width = "50px" height="50px" alt="profile"/>
             )}
           
-           { isOwner && (
+           { isOwner ? (
                 <>
             
             <button onClick = {onDeleteClick}>Delete Lweet </button>
             <button onClick = {toggleEditing}>Update Lweet </button>
             </>
+            ):(
+                <span onClick={() => { setLike(like + 1); }} > 좋아요 {like}</span>
             )}
             </>
             )}

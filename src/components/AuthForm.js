@@ -31,7 +31,7 @@ const AuthForm = () => {
                 //log in
                 data = await signInWithEmailAndPassword(authService, email, password);
             }
-           
+           console.log(data);
 
         } catch (error) {
              if (error.message ==='Firebase: Password should be at least 6 characters (auth/weak-password).'){
