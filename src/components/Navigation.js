@@ -10,6 +10,9 @@ const Navigation = ({userObj}) => {
                 <li>
                     <Link to = "/profile">{userObj.displayName}의 My Profile</Link>
                 </li>
+                <li>
+                    <Link to = "/test">테스트페이지</Link>
+                </li>
             </ul>
         </nav>
     );

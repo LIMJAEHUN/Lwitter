@@ -4,7 +4,7 @@ import { db } from "fbase.js";
 import { collection, onSnapshot } from "firebase/firestore";
 import Lweet from "components/Lweet.js";
 import LweetFactory from 'components/LweetFactory.js';
-
+import Like from "components/Like.js";
 
 
 const Home = ({userObj}) => {
@@ -21,7 +21,7 @@ const Home = ({userObj}) => {
     //     setLweets((prev) => [lweetObject, ...prev])
     // });
     // }
- 
+
 
 
     useEffect(() => {
@@ -39,7 +39,7 @@ const Home = ({userObj}) => {
  
     return (
         <>
-        <like />
+       <Like  userObj={userObj} />
     <LweetFactory userObj={userObj} />
              <div>
                 {lweets.map((lweet) => (
@@ -48,12 +48,9 @@ const Home = ({userObj}) => {
                     key = { lweet.id} 
                     lweetObj={lweet} 
                     isOwner={lweet.creatorID === userObj.uid} 
-                    />
-                    
-                   
-                    
+                    />   
                 ))}
-                
+
                 
              </div>
              
