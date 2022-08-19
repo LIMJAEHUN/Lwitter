@@ -11,6 +11,7 @@ const Home = ({userObj}) => {
     
    
     const [ lweets, setLweets ] = useState([]);
+  //  const [ likes, setLikes ] = useState([]);
    
 
 
@@ -31,28 +32,44 @@ const Home = ({userObj}) => {
                 id: document.id,
                 ...document.data(),
             }));
+            console.log('%s newArray' ,newArray);
             setLweets(newArray);
-        });
+        }); //lweets
+      
      
     }, []);
+
+    // useEffect(() => {
+    //     onSnapshot(collection(db,"likes"), (snapshot) =>
+    //     {
+    //         const newLike = snapshot.docs.map((document) => ({
+    //             id: document.id,
+    //             ...document.data(),
+    //         }));
+    //         console.log('%s 라이크' ,newLike);
+    //         setLikes(newLike);
+    //     });
+     
+    // }, []);
 
  
     return (
         <>
-       <Like  userObj={userObj} />
+       
     <LweetFactory userObj={userObj} />
              <div>
                 {lweets.map((lweet) => (
 
                     <Lweet 
                     key = { lweet.id} 
-                    lweetObj={lweet} 
+                    lweetObj={lweet}
+                    userObj={userObj}
                     isOwner={lweet.creatorID === userObj.uid} 
                     />   
                 ))}
-
-                
              </div>
+            
+             
              
              </>
     );
