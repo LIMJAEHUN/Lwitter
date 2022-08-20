@@ -1,0 +1,79 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    border-bottom: solid;
+    background-color: #EEEFF1;
+    border-color: rgb(231, 227, 227);
+}
+
+.logo {
+    position: static;
+    width: 94%;
+    max-width: 100px;
+    height: 100%;
+}
+
+.nav {
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    display: flex;
+}
+
+nav > div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    padding-top: 100px;
+    padding-left: 33%;
+}
+
+.column {
+    width: 500px;
+    height: 200px;
+    border: solid;
+    border-radius: 5px;
+    border-color: rgb(0, 0, 0);
+    background-color: #EEEFF1;
+    padding-left: 10px;
+}
+
+.factory-form {
+    width: 400px;
+    padding: 10px;
+    display: flex;
+}
+
+.input-text {
+    display: flex;
+    position:relative;
+}
+
+.input-file {
+    padding-left: 20px;
+    display:block;
+}
+
+.input-file-button{
+    padding: 5px 10px;
+    background-color:#5dacec;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+}
+
+.input-image {
+    width: 400px;
+    height: 200px;
+    border: solid;
+    border-radius: 5px;
+    border-color: rgb(0, 0, 0);
+}
+

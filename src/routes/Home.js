@@ -4,7 +4,9 @@ import { db } from "fbase.js";
 import { collection, onSnapshot } from "firebase/firestore";
 import Lweet from "components/Lweet.js";
 import LweetFactory from 'components/LweetFactory.js';
+import AppRouter from 'components/Router.js';
 import Like from "components/Like.js";
+
 
 
 const Home = ({userObj}) => {
@@ -57,6 +59,7 @@ const Home = ({userObj}) => {
         <>
        
     <LweetFactory userObj={userObj} />
+
              <div>
                 {lweets.map((lweet) => (
 
@@ -68,9 +71,7 @@ const Home = ({userObj}) => {
                     />   
                 ))}
              </div>
-            
-             
-             
+
              </>
     );
 };

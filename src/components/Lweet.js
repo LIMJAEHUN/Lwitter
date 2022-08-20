@@ -100,7 +100,8 @@ const Lweet = ({ lweetObj, isOwner, userObj,likes,likekey }) => {
     }
 
     return(
-        <div>
+        <div className='body'>
+            <div className='column'>
             {editing ? (
                 <>
                 <form onSubmit={onSubmit}>
@@ -138,7 +139,9 @@ const Lweet = ({ lweetObj, isOwner, userObj,likes,likekey }) => {
         
             </>
             )}
+            </div>
         </div>
+        
     );
 };
 
