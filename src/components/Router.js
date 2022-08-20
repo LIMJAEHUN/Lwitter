@@ -7,6 +7,7 @@ import Navigation from './Navigation.js';
 import Home from "routes/Home.js";
 import Auth from "routes/Auth.js";
 import Profile from "routes/Profile.js";
+import Test from "routes/Test.js";
 
 const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
    
@@ -22,6 +23,9 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                     </Route>
                     <Route exact path = "/profile">
                         <Profile refreshUser={refreshUser} userObj = {userObj}/>
+                    </Route>
+                    <Route exact path = "/test"  element={<Test />}>
+                        <Test refreshUser={refreshUser} userObj = {userObj}/>
                     </Route>
                     </>
                     ) : (

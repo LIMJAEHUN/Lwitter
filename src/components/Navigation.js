@@ -5,6 +5,7 @@ import logoImage from '../image/twitter-logo.png';
 
 const Navigation = ({userObj}) => {
     return (
+
         <header className="header">
             <nav className="nav">
             <div className="logo">
@@ -15,8 +16,12 @@ const Navigation = ({userObj}) => {
             <div>
                 <Link to = "/profile">{userObj.displayName}의 My Profile</Link>  
             </div>
+            <li>
+                    <Link to = "/test">테스트페이지</Link>
+                </li>
             </nav>
         </header>
+
     );
 };
 
