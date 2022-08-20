@@ -68,8 +68,8 @@ const LweetFactory = ({ userObj }) => {
                     </div>
 
                     <div className="input-file">
-                        <label className="input-file-button" for="input-file">트윗</label>
-                        <input type ="submit" style={{display:"none"}} id="input-file" value = "Lweet"/>
+                        <label className="input-file-button" for="input-twite">트윗</label>
+                        <input type ="submit" style={{display:"none"}} id="input-twite" value = "Lweet"/>
                     </div>
                 </div>    
                 {attachment && ( 

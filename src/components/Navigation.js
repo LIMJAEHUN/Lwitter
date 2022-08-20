@@ -5,7 +5,6 @@ import logoImage from '../image/twitter-logo.png';
 
 const Navigation = ({userObj}) => {
     return (
-
         <header className="header">
             <nav className="nav">
             <div className="logo">
