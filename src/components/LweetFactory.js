@@ -4,7 +4,7 @@ import { db, storage } from "fbase.js";
 import { collection, addDoc } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import { uploadString, ref, getDownloadURL } from "@firebase/storage";
-
+import "../css/Layout.css";
 
 const LweetFactory = ({ userObj }) => {
     const [ lweet, setLweet ] = useState("");
@@ -51,24 +51,35 @@ const LweetFactory = ({ userObj }) => {
             }
             reader.readAsDataURL(theFile);
          };
-         const onClearAttachment = () => setAttachment("");
+        const onClearAttachment = () => setAttachment("");
+    
     return(
-        <form onSubmit={onSubmit}>
-        <input
-         value ={lweet}
-         onChange = {onChange}
-         type = "text"
-         placeholder="What's on your mind?"
-         maxLength={120} />
-         <input type = "file" accept="image/*" onChange={onFileChange}/>
-         <input type ="submit" value = "Lweet" />
-         {attachment && (
-         <div>
-         <img src={attachment} width="50px" height={"50px"} alt="profile"/>
-         <button onClick={onClearAttachment}>Clear</button>
+        <div className="body">
+            <form onSubmit={onSubmit}>
+                <div className="factory-form">
+                    <div className="input-text">
+                        <input  value ={lweet} onChange = {onChange} type = "text" placeholder="What's on your mind?" maxLength={120}/>
+                    </div>
+
+                    <div className="input-file">
+                        <label className="input-file-button" for="input-file">이미지 업로드</label>
+                        <input type = "file" style={{display:"none"}} id="input-file" accept="image/*" onChange={onFileChange}/>
+                    </div>
+
+                    <div className="input-file">
+                        <label className="input-file-button" for="input-file">트윗</label>
+                        <input type ="submit" style={{display:"none"}} id="input-file" value = "Lweet"/>
+                    </div>
+                </div>    
+                {attachment && ( 
+                <div className="input-image">
+                <img src={attachment} width="50%" height={"50%"} alt="profile"/>
+                <button onClick={onClearAttachment}>Clear</button>
+                </div>
+                )}
+                
+            </form>
          </div>
-         )}
-         </form>
     );
 
 };

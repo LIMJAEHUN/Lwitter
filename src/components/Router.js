@@ -13,6 +13,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
     return (
         <Router>
             {isLoggedIn && <Navigation userObj ={userObj} />}
+            
             <Switch>
                 {isLoggedIn ? ( 
                     <> 
@@ -31,7 +32,7 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                 }
                 {/* //<Redirect from = "*" to = "/" />  리다이엑트를 이용한 로그아웃*/}
             </Switch>
-
+            
         </Router>
     );
 };

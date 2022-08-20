@@ -3,6 +3,7 @@ import { db,storage } from "fbase.js";
 import { doc, deleteDoc,  updateDoc } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage"
 import { useState } from "react";
+import "../css/Layout.css";
 
 const Lweet = ({ lweetObj, isOwner }) => {
     const [editing, setEditing] = useState(false);
@@ -41,7 +42,8 @@ const Lweet = ({ lweetObj, isOwner }) => {
     };
 
     return(
-        <div>
+        <div className='body'>
+            <div className='column'>
             {editing ? (
                 <>
                 <form onSubmit={onSubmit}>
@@ -65,7 +67,9 @@ const Lweet = ({ lweetObj, isOwner }) => {
             )}
             </>
             )}
+            </div>
         </div>
+        
     );
 };
 
