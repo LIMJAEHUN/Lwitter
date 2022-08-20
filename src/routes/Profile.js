@@ -61,7 +61,7 @@ const Profile = ({refreshUser , userObj }) => {
         
     };
     return (
-        <>
+        <div className="body">
         <form onSubmit={onSubmit}>
             <input onChange={onChange} type="text" placeholder= "Display name" value = {newDisplayName} />
             <input type = "submit" value="update Profile" />
@@ -77,9 +77,7 @@ const Profile = ({refreshUser , userObj }) => {
             
         ))}
         
-       
-        
-        </>
+        </div>
     );
 };
 export default Profile;
