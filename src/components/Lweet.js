@@ -1,15 +1,16 @@
 import React from 'react';
 import { db,storage } from "fbase.js";
-import { doc, collection,addDoc,deleteDoc,  updateDoc, onSnapshot } from "firebase/firestore";
+import { doc, collection,addDoc,deleteDoc,  updateDoc, onSnapshot,getDocs } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage"
 import { useState, useEffect } from "react";
 //import Like from "components/Like.js";
 
-const Lweet = ({ lweetObj, isOwner, userObj,likes,likekey }) => {
+const Lweet = ({ lweetObj, isOwner, userObj }) => {
    
     const [editing, setEditing] = useState(false);
     const [newLweet, setNewLweet] = useState(lweetObj.text);
-    const [ like, setLike]= useState();
+    const [ like, setLike]= useState([]);
+    const [ likes, setLikes]= useState([]);
     //const [ liketotal, setliketotal] =  useState(lweetObj.total);
     const [ likemg, setlikemg]= useState(false);
 
@@ -61,39 +62,65 @@ const Lweet = ({ lweetObj, isOwner, userObj,likes,likekey }) => {
             uid:userObj.uid,
             createdAt: Date.now(),
         })
-        setLike(post);
+        setLike("");
     };
     //updateDoc(doc(db, `lweets/${lweetObj.id}`), {total: liketotal});
     setlikemg(true);
-        
-  
+}
 
-    };
+    // const Likes = async() => {
+    //     const dbLweets = await getDocs(collection(db, "likes"));
+    //      dbLweets.forEach((document) => {
+    //        // console.log('%s 이거는',document.data)
+    //         const lweetObject = {  id: document.id };
+    //         setLike(lweetObject)
+    //        // console.log('%s like',lweetObject.id);
+    // });
+   
+    //};
+   // console.log('%s like',like.id);
+
+    //console.log('%s 이거는',document.id));
+   
+     
+    
+    // useEffect(() => {
+      
+    // }, []);
 
         useEffect(() => {
         onSnapshot(collection(db,"likes"), (snapshot) =>
         {
             const newLike = snapshot.docs.map((document) => ({
                 id: document.id,
-                ...document.data(),
+               ...document.data(),
+              
                 
             }));
-            console.log('%s 라이크' ,newLike.id);
-            setLike(newLike.id);
+            console.log('%s 라이크' ,newLike);
+            setLikes(newLike);
         });
-     
+       
     }, []);
 
+    //console.log('%s like',likes.id);
+//     const listItems = numbers.map((number) =>
+//     <li key={number.toString()}>
+//       {number}
+//     </li>
+//   );
 
     const togglelike = async() => {
         const ok = window.confirm("좋아요 취소?");
-       
-        console.log('%s 아이디',like.id);
       
         if (ok) {
-            //console.log('%s 아이디',likes.id);
+            console.log('%s 아이디2',likes.map((like) => like.id));
+            likes.map((likeID)  => <test likeId2 = {likeID.id} /> );
            //const data = await deleteDoc(doc(db , `likes/${like.id}`));
-           await deleteDoc(doc(db, 'likes', like.id));
+           //const test = await doc(db,`likes/${likeID}`);
+           console.log('%s test',test);
+            
+
           // console.log('%s data',data.id);
         };
         setlikemg((prev) => !prev);
