@@ -47,18 +47,18 @@ nav > div {
 
 .factory-form {
     width: 400px;
+    height: 50px;
     padding: 10px;
     display: flex;
 }
 
 .input-text {
-    display: flex;
-    position:relative;
+    display: flex;  
 }
 
 .input-file {
     padding-left: 20px;
-    display:block;
+    display: flex;
 }
 
 .input-file-button{
@@ -76,6 +76,3 @@ nav > div {
     border-radius: 5px;
     border-color: rgb(0, 0, 0);
 }
-
-
-

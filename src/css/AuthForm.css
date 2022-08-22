@@ -37,13 +37,10 @@
     margin: auto;
     display: block;
     cursor: pointer;
-}
-
-#login-connect {
     background: rgb(0, 0, 0);
 }
 
-#login-connect:hover {
+.login-button:hover {
     border-color: rgb(0, 0, 0);
     background: rgb(255, 255, 255);
     -webkit-transition: all .8s ease-out;
@@ -53,7 +50,7 @@
     transition: all .3s ease-out;
 }
 
-#login-connect span {
+.login-button span {
     box-sizing: border-box;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -67,7 +64,7 @@
     transition: all .3s ease;
 }
 
-#login-connect:hover span{
+.login-button:hover span{
     color: rgb(0, 0, 0);
     border-color: rgb(255, 255, 255);
     -webkit-transition: all .8s ease-out;

@@ -66,13 +66,18 @@ const LweetFactory = ({ userObj }) => {
                         <label className="input-file-button" for="input-file">이미지 업로드</label>
                         <input type = "file" style={{display:"none"}} id="input-file" accept="image/*" onChange={onFileChange}/>
                     </div>
-                    <label className="input-file-button" for="input-twite">트윗</label>
-                    <input type ="submit" style={{display:"none"}} id="input-twite" value = "Lweet"/>
+
+                    <div className="input-file">
+                        <label className="input-file-button" for="input-twite">트윗</label>
+                        <input type ="submit" style={{display:"none"}} id="input-twite" value = "Lweet"/>                 
+                    </div>   
                 </div>    
                 {attachment && ( 
                 <div className="input-image">
                 <img src={attachment} width="50%" height={"50%"} alt="profile"/>
+                <div className="input-clear-button">
                 <button onClick={onClearAttachment}>Clear</button>
+                </div>
                 </div>
                 )}
                 
