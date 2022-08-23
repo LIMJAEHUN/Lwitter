@@ -9,10 +9,10 @@ const Lweet = ({ lweetObj, isOwner, userObj }) => {
    
     const [editing, setEditing] = useState(false);
     const [newLweet, setNewLweet] = useState(lweetObj.text);
-    const [ like, setLike]= useState([]);
+    //const [ like, setLike]= useState([]);
     const [ likes, setLikes]= useState([]);
     //const [ liketotal, setliketotal] =  useState(lweetObj.total);
-    const [ likemg, setlikemg]= useState(false);
+    const [ likemg, setLikemg]= useState(0);
 
     
 
@@ -62,10 +62,12 @@ const Lweet = ({ lweetObj, isOwner, userObj }) => {
             uid:userObj.uid,
             createdAt: Date.now(),
         })
-        setLike("");
+
+        // if(userObj.uid === doc(db , `likes/${lweetObj.id}`);) 
+       
     };
     //updateDoc(doc(db, `lweets/${lweetObj.id}`), {total: liketotal});
-    setlikemg(true);
+    setLikemg(1);
 }
 
     // const Likes = async() => {
@@ -93,15 +95,19 @@ const Lweet = ({ lweetObj, isOwner, userObj }) => {
         {
             const newLike = snapshot.docs.map((document) => ({
                 id: document.id,
+                uid: userObj.uid,
                ...document.data(),
               
                 
             }));
-            console.log('%s 라이크' ,newLike);
+            console.log('%s 라이크' ,newLike.uid);
             setLikes(newLike);
         });
+      
        
     }, []);
+    
+  
 
     //console.log('%s like',likes.id);
 //     const listItems = numbers.map((number) =>
@@ -115,15 +121,13 @@ const Lweet = ({ lweetObj, isOwner, userObj }) => {
       
         if (ok) {
             console.log('%s 아이디2',likes.map((like) => like.id));
-            likes.map((likeID)  => <test likeId2 = {likeID.id} /> );
-           //const data = await deleteDoc(doc(db , `likes/${like.id}`));
+            const LikeData = likes.map((like)  => <li likeonj = {like}  key ={ like.id} /> )
+            console.log('%s LikeData',LikeData.likeonj);
+           const data = await deleteDoc(doc(db , `likes/${LikeData.id}`));
            //const test = await doc(db,`likes/${likeID}`);
-           console.log('%s test',test);
-            
-
-          // console.log('%s data',data.id);
+            console.log('%s data',data);
         };
-        setlikemg((prev) => !prev);
+        setLikemg((prev) => !prev);
     }
 
     return(
