@@ -148,3 +148,11 @@ false이 넘어옴
 - 키값만 map 함수로 가져 오지만 특정객체에 대한 분류가 안되서 전체 key를 가져옴
 - Lweet 컴포넌트 분리 해야할수도
 - 좋아요 버튼 useState값에 저장되지만 새로고침시 값이날아감
+# 37일차 
+- 좋아요 구현중
+- 접근이 처음부터 잘못됨 선택한 객체(lweet)에는 like.id 값이 없어 like.id로 like 테이블에서 문서를 찾아 삭제를 할수 없다 
+- lweet삭제랑 다른 방식으로 접근 파이어베이스 쿼리를 통해 접근시도 예정
+- 작업을 위해 Like.js로 컴포턴트 분리 진행
+- 작동에는 이상없으나 Home 에서 lweet.id를 Like로 상속하는 과정에서 Warning: Each child in a list should have a unique "key" prop. 오류 발생 수정 실패
+- 작동에는 지장 없으므로 일단 보류하고 진행할 예정
+- lweet에 문서id랑 Like에 저장된 post 필드 값이 같으면서 uid 값이 같은 계시물을 찾아 삭제 진행하는 방식
