@@ -156,3 +156,8 @@ false이 넘어옴
 - 작동에는 이상없으나 Home 에서 lweet.id를 Like로 상속하는 과정에서 Warning: Each child in a list should have a unique "key" prop. 오류 발생 수정 실패
 - 작동에는 지장 없으므로 일단 보류하고 진행할 예정
 - lweet에 문서id랑 Like에 저장된 post 필드 값이 같으면서 uid 값이 같은 계시물을 찾아 삭제 진행하는 방식
+# 38일차
+- 좋아요 진행중
+- 쿼리문을 좋아요 누른 객체에 대한 문서 id 가져오기 진행
+- deletedoc가 작동을 안함
+- 문서를 못찾아서 미작동인지, 코드가 잘못된지는 모르겠음

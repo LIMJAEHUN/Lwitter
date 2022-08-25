@@ -63,10 +63,10 @@ const LweetFactory = ({ userObj }) => {
                     </div>
 
                     <div className="input-file">
-                        <label className="input-file-button" htmlfor="input-file">이미지 업로드</label>
+                        <label className="input-file-button" htmlFor="input-file">이미지 업로드</label>
                         <input type = "file" style={{display:"none"}} id="input-file" accept="image/*" onChange={onFileChange}/>
                     </div>
-                    <label className="input-file-button" htmlfor="input-twite">트윗</label>
+                    <label className="input-file-button" htmlFor="input-twite">트윗</label>
                     <input type ="submit" style={{display:"none"}} id="input-twite" value = "Lweet"/>
                 </div>    
                 {attachment && ( 
