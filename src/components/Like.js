@@ -1,12 +1,11 @@
 import React from 'react';
 import { db } from "fbase.js";
-import { doc, collection,addDoc,deleteDoc, onSnapshot,getDocs,query, where } from "firebase/firestore";
-import { useState, useEffect } from "react";
+import { doc, collection,addDoc,deleteDoc,getDocs,query, where } from "firebase/firestore";
+import { useState } from "react";
+
 
 const Like = ({ lweetObj, userObj,likeObj }) => {
-    //const [ like, setLike]= useState([]);
-    const [ likes, setLikes]= useState([]);
-    //const [ liketotal, setliketotal] =  useState(lweetObj.total);
+    //const [ likes, setLikes]= useState([]);
     const [ likemg, setLikemg]= useState(0);
 
     const onLike = async(event) => {
@@ -32,62 +31,33 @@ const Like = ({ lweetObj, userObj,likeObj }) => {
 const togglelike = async() => {
     const ok = window.confirm("좋아요 취소?");
   
+  
     if (ok) {
         const q = query(collection(db, "likes"), where("uid", "==", userObj.uid), where("post", "==", lweetObj.id));
-        console.log("%s qqq",q)
-        const querySnapshot = await getDocs(q);
-            querySnapshot.forEach((doc) => {
-            const likeObject = {  id: doc.id };
-            console.log("%s likeObject:", likeObject.id);
-            setLikes(likeObject)
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-            });
-        await deleteDoc(doc(db , "likes",likes.id));
-       // await deleteDoc(doc(db, "cities", "DC"));
-
-        const test = await doc(db,`likes/${likes.id}`);
-        console.log('%s test',test);
-      
-      
-        //await storage.refFromUrl(lweetObj.attachmentUrl).delete();
+        const data = await getDocs(q);
+        if (data.docs.length !== 0){
+                await deleteDoc(data.docs[0].ref);
+            }
+    }
     
-    // const Likes = async() => {
-    //     const dbLweets = await getDocs(collection(db, "likes"));
-    //      dbLweets.forEach((document) => {
-    //        // console.log('%s 이거는',document.data)
-    //         const lweetObject = {  id: document.id };
-    //         setLike(lweetObject)
-    //        // console.log('%s like',lweetObject.id);
-    // });
-    
-        
-       //const data = await deleteDoc(doc(db , `likes/${Likemap.id}`));
-    //    const test = await doc(db,`likes/${likeObj.id}`);
-    //     console.log('%s test',test);
-    };
     setLikemg((prev) => !prev);
  
 }
 
 
-useEffect(() => {
+// useEffect(async() => {
     
-    onSnapshot(collection(db,"likes"), (snapshot) =>
-    {
-        const newLike = snapshot.docs.map((document) => ({
-            id: document.id,
-           uid: userObj.uid,
-           ...document.data(),
-          
-            
-        }));
-        console.log('%s 라이크' ,newLike.uid);
-        setLikes(newLike);
-    });
+//     const q = query(collection(db, "likes"), where("uid", "==", userObj.uid), where("post", "==", lweetObj.id));
+//     console.log("%s qqq",q)
+//     const querySnapshot = await getDocs(q);
+//         querySnapshot.forEach((doc) => {
+//         const likeObject = {  id: doc.id };
+//         console.log("%s likeObject:", likeObject.id);
+//         setLikes(likeObject)
+//         });
   
    
-}, []);
+// }, []);
    
     return(
         <div>
@@ -99,10 +69,6 @@ useEffect(() => {
                 )
                 }
         </div>
-        // <form onSubmit={onLike}>
-            
-        //     <input type = "submit" value = "like" />
-        // </form>
     )
 };
 export default Like;

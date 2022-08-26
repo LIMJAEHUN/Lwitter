@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { db } from "fbase.js";
-import { collection, onSnapshot, getDocs } from "firebase/firestore";
+import { collection, onSnapshot } from "firebase/firestore";
 import Lweet from "components/Lweet.js";
 import LweetFactory from 'components/LweetFactory.js';
 // import AppRouter from 'components/Router.js';
@@ -13,7 +13,7 @@ const Home = ({userObj}) => {
     
    
     const [ lweets, setLweets ] = useState([]);
-    const [ likes, setLikes]= useState([]);
+  
 
 
 
