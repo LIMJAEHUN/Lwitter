@@ -49,6 +49,7 @@ const Home = ({userObj}) => {
                     
                     lweetObj={lweet}
                     userObj={userObj}
+                    likecount={lweet.likeCount}
                     /> 
                 
                     </>

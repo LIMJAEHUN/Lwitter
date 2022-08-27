@@ -21,7 +21,7 @@ const LweetFactory = ({ userObj }) => {
         }
         
         await addDoc(collection(db, "lweets"), {
-        post_id: 1,
+        likeCount: 0,
         text: lweet,
         createdAt: Date.now(),
         creatorID: userObj.uid,

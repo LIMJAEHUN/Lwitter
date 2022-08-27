@@ -1,15 +1,26 @@
 import React from 'react';
 import { db } from "fbase.js";
-import { doc, collection,addDoc,deleteDoc,getDocs,query, where } from "firebase/firestore";
+import { doc, collection,addDoc,deleteDoc,getDocs,query, where,updateDoc } from "firebase/firestore";
 import { useState } from "react";
 
 
-const Like = ({ lweetObj, userObj,likeObj }) => {
+const Like = ({ lweetObj, userObj,likecount }) => {
     //const [ likes, setLikes]= useState([]);
     const [ likemg, setLikemg]= useState(0);
+    // const [ likemg, setLikemg]= useState(() => JSON.parse(window.localStorage.getItem("likemg")) || 0);
+
+    //     useEffect(() => {
+    //         window.localStorage.setItem("likemg", JSON.stringify(likemg));
+    //     }, [likemg]);
+
+      
+
+      
+        
+        
 
     const onLike = async(event) => {
-        event.preventDefault();
+        //event.preventDefault();
         const ok = window.confirm("좋아요를 누르시겠습니까?");
         console.log('%suserObj',userObj);
         if (ok){
@@ -19,12 +30,15 @@ const Like = ({ lweetObj, userObj,likeObj }) => {
             post:post.id,
             uid:userObj.uid,
             createdAt: Date.now(),
-        })
-
+        }
        
+        )
+       
+        await updateDoc(doc(db, `lweets/${lweetObj.id}`), {likeCount:likecount+1});
+        setLikemg(1);
     };
    
-    setLikemg(1);
+    
 }
 
 
@@ -39,7 +53,7 @@ const togglelike = async() => {
                 await deleteDoc(data.docs[0].ref);
             }
     }
-    
+    await updateDoc(doc(db, `lweets/${lweetObj.id}`), {likeCount:likecount-1});
     setLikemg((prev) => !prev);
  
 }
@@ -58,13 +72,16 @@ const togglelike = async() => {
   
    
 // }, []);
-   
+      
+
     return(
         <div>
           { likemg ? ( 
-              <button onClick = {togglelike}> Lweet Cancel </button>
+              <button onClick = {togglelike}> Lweet Cancel {likecount}</button>
+              //<button onClick={() => togglelike(likemg - 1)}>Lweet Cancel{likemg}</button>
                 ):( 
-                <button onClick = {onLike}> Lweet like </button>
+                 <button onClick = {onLike}> Lweet like{likecount} </button>
+                //<button onClick={() => onLike(likemg + 1)}>Lweet like{likemg}</button>
                
                 )
                 }
