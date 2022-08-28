@@ -86,7 +86,6 @@ false이 넘어옴
 - 프로필 업데이트 두번 누르면  getIdToken  함수 에러 발생
 - 유저 정보 호출하는 과정에서 getidtoken을 찾지 못하는 것으로 예상
 - Auth 패키지의 updateCurrentUser 함수 사용하여 호출 문제 해결(참조 https://firebase.google.com/docs/reference/js/v8/firebase.auth.Auth#updatecurrentuser)
-
 # 20일차
 - 소스 코드 정리
 - auth, home 컴포넌트 나누기 작업 진행
@@ -122,7 +121,6 @@ false이 넘어옴
 - 단순히 버튼 누를때마 증가 하면 계속 증가만 하고 값이 저장이 안됨(저장하는 방법 알아보기)
 - 파이어베이스를 좀더 파보는 방향으로 진행할예정
 - 좋아요 클릭시 like 테이블에 필드 생성 되며 uid가 저장되는거 진행중
-
 # 32일차
 - 좋아요 구현중
 - like.js 별도 컴포넌트로 분리
