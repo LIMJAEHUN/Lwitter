@@ -24,9 +24,9 @@ const AppRouter = ({ refreshUser, isLoggedIn, userObj }) => {
                     <Route exact path = "/profile">
                         <Profile refreshUser={refreshUser} userObj = {userObj}/>
                     </Route>
-                    <Route exact path = "/test"  element={<Test />}>
+                    {/* <Route exact path = "/test"  element={<Test />}>
                         <Test refreshUser={refreshUser} userObj = {userObj}/>
-                    </Route>
+                    </Route> */}
                     </>
                     ) : (
                         <Route expact = "/" element={<Auth />}>

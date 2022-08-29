@@ -1,10 +1,13 @@
-// import React from 'react';
+import React from 'react';
 //import { db,storage } from "fbase.js";
 // import { doc, deleteDoc,  updateDoc,onSnapshot,collection,addDoc } from "firebase/firestore";
 
 //import { useState } from "react";
+import cardimg from '../image/LETFLIX.jpg';
 
 const Test = () => {
+
+   
 //     const [ like, setLike]= useState("");
 
 //     const onSubmit = async(event) => {

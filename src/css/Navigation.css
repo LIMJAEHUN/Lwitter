@@ -1,0 +1,33 @@
+.main-cardimg-wrap{
+    width: 100%;
+   
+    position: relative;
+   
+}
+.main-cardimage img {
+    width: 100%;
+    vertical-align: middle;
+   
+}
+.head-img img{
+    width: 10%;
+    transform: translate( 0%, -100%);
+}
+
+.card-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 100%;
+    transform: translate( -50%, -50%);
+font-size: 20px;
+font-family: 'ypseo';
+text-align: center;
+color : #eaf4f7;
+}
+.card-text h2{
+    font-size: 20px;
+    color : #eaf4f7;
+
+}
+
